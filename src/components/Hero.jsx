@@ -129,23 +129,21 @@ const Hero = () => {
                 </div>
 
                 <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75">
-                    <b>Frontend <br/> Developer</b>
+                    <b>Frontend Developer</b>
                 </h1>
 
                 <div className="absolute left-0 top-0 z-40 size-full">
                     <div className="mt-24 px-5 sm:px-10">
-                        <h1 className="special-font hero-heading text-blue-100">
+                        <h1 className="special-font hero-heading1 text-blue-100">
                             <b>Mi</b>nin<b>du</b>
                         </h1>
 
                         <p className="mb-5 max-w-64 font-robert-regular text-blue-100">
                             Hey there! I'm an undergraduate Software Engineering student with a passion for frontend development.
-                            <br/>I love bringing ideas to life through clean, interactive, and user-friendly interfaces.
-                            <br/>Dive into my projects and see what I’ve been building!
-                            <br/><br/>
+                            <br/>
+                            <br/>
                             Full - Time Developer<br/>
                             Part - Time Gamer<br/>
-                            Also Human !!
                         </p>
 
                         <Button
@@ -156,7 +154,7 @@ const Hero = () => {
             </div>
 
             <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black">
-                <b>Frontend <br/>Developer</b>
+                <b>Frontend Developer</b>
             </h1>
 
         </div>

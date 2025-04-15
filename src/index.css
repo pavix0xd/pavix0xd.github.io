@@ -68,8 +68,12 @@ body {
         font-feature-settings: "ss01" on;
     }
 
+    .hero-heading1{
+        @apply uppercase font-zentry font-black text-4xl sm:right-10 sm:text-7xl md:text-9xl lg:text-[12rem];
+    }
+
     .hero-heading {
-        @apply uppercase font-zentry font-black text-5xl sm:right-10 sm:text-7xl md:text-9xl lg:text-[12rem];
+        @apply uppercase font-zentry font-black text-4xl sm:right-10 sm:text-5xl md:text-7xl lg:text-[5rem];
     }
 
     .about-subtext {
