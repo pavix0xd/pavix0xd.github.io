@@ -3,6 +3,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 
 import AnimatedTitle from "./AnimatedTitle";
+import AboutText from "./AboutText.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -28,15 +29,14 @@ const About = () => {
 
     return (
         <div id="about" className="min-h-screen w-screen">
-            <div className="relative mb-8 mt-36 flex flex-col items-center gap-5">
-                <p className="font-general text-sm uppercase md:text-[10px]">
-                    Welcome to Zentry
-                </p>
+            <div className="relative 4 mt-16 flex flex-col items-center gap-4">
 
-                <AnimatedTitle
-                    title="Disc<b>o</b>ver the world's <br /> largest shared <b>a</b>dventure"
-                    containerClass="mt-5 !text-black text-center"
-                />
+                {/*<AnimatedTitle*/}
+                {/*    title="Disc<b>o</b>ver the world's <br /> largest shared <b>a</b>dventure"*/}
+                {/*    containerClass="mt-5 !text-black text-center"*/}
+                {/*/>*/}
+
+                <AboutText/>
 
                 <div className="about-subtext">
                     <p>The Game of Games begins—your life, now an epic MMORPG</p>
