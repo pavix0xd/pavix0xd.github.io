@@ -29,7 +29,7 @@ const About = () => {
 
     return (
         <div id="about" className="min-h-screen w-screen">
-            <div className="relative 4 mt-16 flex flex-col items-center gap-4">
+            <div className="relative mt-16 flex flex-col items-center gap-4">
 
                 {/*<AnimatedTitle*/}
                 {/*    title="Disc<b>o</b>ver the world's <br /> largest shared <b>a</b>dventure"*/}
