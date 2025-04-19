@@ -2,6 +2,8 @@ import React, { useRef } from 'react';
 import Button from './Button';
 import { TiLocationArrow } from 'react-icons/ti';
 
+const navItems = ['About', 'Projects', 'Skills', 'Contact'];
+
 export default function Navbar() {
   const navContainerRef = useRef(null);
 
@@ -21,10 +23,19 @@ export default function Navbar() {
               id="contact-me"
               title="Contact Me"
               leftIcon={<TiLocationArrow />}
-              containerClass="bg-blue-500 text-white px-4 py-2 rounded-md md:flex hidden items-center justify-center gap-1 hover:bg-blue-600 transition"
+              containerClass="bg-yellow-300 text-black md:flex hidden items-center gap-1"
             />
           </div>
 
+            <div className='flex h-full items-center'>
+                <div className='hidden md:block'>
+                    {navItems.map((item) => (
+                        <a className='nav-hover-btn'>
+                            {item}
+                        </a>
+                    ))}    
+                </div>
+            </div>
         </nav>
       </header>
     </div>
