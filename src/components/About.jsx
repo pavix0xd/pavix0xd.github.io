@@ -36,7 +36,7 @@ const About = () => {
                 {/*    containerClass="mt-5 !text-black text-center"*/}
                 {/*/>*/}
 
-                <AboutText/>
+                <AboutText className="w-full md:w-3/4 lg:w-1/2 xl:w-1/3 text-center"/>
 
                 <div className="about-subtext">
                     <p>The Game of Games begins—your life, now an epic MMORPG</p>
