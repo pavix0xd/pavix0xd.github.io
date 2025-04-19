@@ -1,6 +1,6 @@
 import {useEffect, useRef, useState} from "react";
 import Button from "./Button.jsx";
-import {TiLocation, TiLocationArrow} from "react-icons/ti";
+import { MdDescription } from "react-icons/md";
 import {useGSAP} from "@gsap/react";
 import gsap from "gsap";
 
@@ -137,7 +137,7 @@ const Hero = () => {
                 <div className="absolute left-0 top-0 z-40 size-full">
                     <div className="mt-24 px-5 sm:px-10">
                         <h1 className="special-font hero-heading1 text-blue-100">
-                            <b>Mi</b>nin<b>du</b>
+                            <b>M</b>inind<b>U</b>
                         </h1>
 
                         <p className="mb-5 max-w-64 font-robert-regular text-blue-100">
@@ -147,9 +147,9 @@ const Hero = () => {
                             Full - Time Developer<br/>
                             Part - Time Gamer<br/>
                         </p>
-
+ƒ
                         <Button
-                            id = "contact-me" title = "Contact Me" leftIcon = {<TiLocationArrow/>} containerClass = "bg-yellow-300 flex-center gap-1"
+                            id = "resume" title = "Resume" leftIcon = {<MdDescription/>} containerClass = "bg-yellow-300 flex-center gap-1"
                         />
                     </div>
                 </div>
