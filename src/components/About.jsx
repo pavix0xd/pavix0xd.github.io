@@ -39,10 +39,11 @@ const About = () => {
                 <AboutText/>
 
                 <div className="about-subtext">
-                    <p>The Game of Games begins—your life, now an epic MMORPG</p>
+                    <p>Minindu Suriyapperuma - Frontend ft. Full stack developer.</p>
                     <p className="text-gray-500">
-                        Zentry unites every player from countless games and platforms, both
-                        digital and physical, into a unified Play Economy
+                        I'm just a chill developer who loves to create cool stuff. Is there 
+                        anything more interesting than watching my Figma wireframes come to life? I don't think so. <br/>
+                        Web? Mobile? Anything in with visuals? I'm your guy.
                     </p>
                 </div>
             </div>
