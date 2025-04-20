@@ -133,12 +133,16 @@ const Projects = () => (
     <div className="container mx-auto px-3 md:px-10">
       <div className="px-5 py-32">
         <p className="font-circular-web text-lg text-blue-50">
-          Into the Metagame Layer
+        Exploring My Digital Universe
         </p>
         <p className="max-w-md font-circular-web text-lg text-blue-50 opacity-50">
-          Immerse yourself in a rich and ever-expanding universe where a vibrant
-          array of products converge into an interconnected overlay experience
-          on your world.
+        Every project here tells a story - of late-night coding sessions, 
+        breakthrough moments, and lessons learned. They represent my evolution 
+        as a developer and designer, from foundational web applications to 
+        cutting-edge interactive experiences. Each piece demonstrates my 
+        versatility in handling different technologies while maintaining a 
+        cohesive design philosophy that balances form and function. This is 
+        more than a portfolio; it's a map of my professional growth.
         </p>
       </div>
 
