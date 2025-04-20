@@ -22,25 +22,25 @@ const Hero = () => {
         {
             index: 1,
             heading: "FRONTEND DEVELOPER",
-            subheading: "<b>M</b>inind<b>U</b>",
+            subheading: "MinindU",
             description: "Visual magics on your way!!"
         },
         {
             index: 2,
             heading: "GAMER",
-            subheading: "<b>M</b>inind<b>U</b>",
+            subheading: "MinindU",
             description: "Visual magics on your way!!"
         },
         {
             index: 3,
             heading: "EXPLORER",
-            subheading: "<b>M</b>inind<b>U</b>",
+            subheading: "MinindU",
             description: "Visual magics on your way!!"
         },
         {
             index: 4,
             heading: "BROTHER",
-            subheading: "<b>M</b>inind<b>U</b>",
+            subheading: "MinindU",
             description: "Visual magics on your way!!"
         }
     ];
@@ -118,7 +118,7 @@ const Hero = () => {
     const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
 
     return (
-        <div className="relative h-dvh w-screen overflow-x-hidden">
+        <div id="hero" className="relative h-dvh w-screen overflow-x-hidden">
             {isLoading && (
                 <div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden bg-violet-50">
                     <div className="three-body">

@@ -161,6 +161,7 @@ html {
     animation-delay: calc(var(--animation-order) * 0.1s);
 }
 
+
 @keyframes indicator-line {
     0% {
         height: 4px;

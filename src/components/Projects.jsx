@@ -166,10 +166,10 @@ const Projects = () => (
             src="img/terminal.jpg"  // Changed from video to image
             title={
               <>
-                Event Ticket Booking System
+                Event Ticketing System
               </>
             }
-            description="An terminal - based real-time event ticketing system made with plain Java"
+            description="An terminal - based real-time event ticketing system made with Java - Springboot, ReactJS and MySQL."
             isVisit
             buttonLink="#github link"
           />
@@ -203,7 +203,7 @@ const Projects = () => (
         </BentoTilt>
 
         <BentoTilt className="bento-tilt_2">
-          <div className="flex size-full flex-col justify-between bg-violet-300 p-5">
+          <div className="flex size-full flex-col justify-between bg-yellow-300 p-5">
             <h1 className="bento-title special-font max-w-64 text-black">
               <b>More coming soon</b>
             </h1>
