@@ -4,7 +4,6 @@ import About from "./components/About.jsx";
 import Navbar from './components/Navbar.jsx';
 import Projects from './components/Projects.jsx';
 import Footer from './components/Footer.jsx';
-import Tech from './components/Tech.jsx';
 
 
 const App = () => {

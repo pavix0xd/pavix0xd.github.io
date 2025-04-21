@@ -163,15 +163,15 @@ const Projects = () => (
       <div className="grid h-[135vh] w-full grid-cols-2 grid-rows-3 gap-7">
         <BentoTilt className ="bento-tilt_1 row-span-1 ms-32 md:col-span-1 md:ms-0">
           <BentoCard
-            src="img/terminal.jpg"  // Changed from video to image
+            src="img/plane.jpg"  // Changed from video to image
             title={
               <>
-                Event Ticketing System
+                Plane Seat Booking
               </>
             }
-            description="An terminal - based real-time event ticketing system made with Java - Springboot, ReactJS and MySQL."
+            description="An terminal - based Plane seat management system built using pure Java"
             isVisit
-            buttonLink="#github link"
+            buttonLink="https://github.com/pavix0xd/PlaneManagementSystem"
           />
         </BentoTilt>
 
@@ -196,7 +196,7 @@ const Projects = () => (
                 Pacman
               </>
             }
-            description="A Pacman clone made with plain Java"
+            description="A Pacman clone made with pure Java"
             isVisit
             buttonLink="https://github.com/pavix0xd/PacMan"
           />

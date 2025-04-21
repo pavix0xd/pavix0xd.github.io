@@ -2,12 +2,20 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" href="/img/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
+    <title>MININDU</title>
+    <style>
+      /* For Firefox */
+      * {
+        scrollbar-width: thin;
+        scrollbar-color: yellow black;
+      }
+    </style>
   </head>
-  <body>
-    <div id="root"></div>
+  <body class="scrollbar-thin scrollbar-track-black scrollbar-thumb-yellow-300 h-screen overflow-y-auto">
+    <div id="root" class="min-h-screen">
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
