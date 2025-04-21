@@ -145,7 +145,25 @@ body {
     .contact-clip-path-2 {
         clip-path: polygon(29% 15%, 85% 30%, 50% 100%, 10% 64%);
     }
+
+    .headline-1,
+    .headline-2 {
+        @apply max-w-max;
+        background: linear-gradient(90deg, #ffefdb 0%, #ffe7eb 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .headline-1 {
+        @apply text-5xl lg:text-[55px] leading-tight font-robert-medium lg:landing-[1.15];
+    }
+
+    .headline-2 {
+        @apply text-3xl lg:text-4xl lg:leading-tight font-robert-regular;
+    }
+
 }
+
 
 html {
     scroll-behavior: smooth;
