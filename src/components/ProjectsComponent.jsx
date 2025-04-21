@@ -63,7 +63,7 @@ const ProjectsComponent = () => {
           onMouseLeave={() => setSelectedProject(null)}
         >
           <motion.p 
-            className="inline-block text-[#b7ab98] uppercase font-bold text-[8vw] leading-[7.5vw] m-0 relative z-[2]"
+            className="inline-block text-yellow-300 uppercase font-bold text-[8vw] leading-[7.5vw] m-0 relative z-[2]"
             style={{ clipPath: clip }}
           >
             {title}
@@ -84,7 +84,7 @@ const ProjectsComponent = () => {
           return (
             <div 
               key={i} 
-              className="bg-[#ec4e39] flex justify-between items-center pl-[10%] pr-[10%]"
+              className="bg-yellow-300 flex justify-between items-center pl-[10%] pr-[10%]"
               style={{
                 clipPath: selectedProject === i ? "inset(0 0 0)" : "inset(50% 0 50%)",
                 transition: 'clip-path 0.4s'
@@ -104,7 +104,7 @@ const ProjectsComponent = () => {
   };
 
   return (
-    <section className="bg-black pb-40 relative w-full overflow-hidden">
+    <section id ="why me?" className="bg-black pb-40 relative w-full overflow-hidden">
       <div className="w-full border-t border-[rgba(183,171,152,0.25)]">
         {data.map((project, i) => (
           <Title 
