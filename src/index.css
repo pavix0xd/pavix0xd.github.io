@@ -264,67 +264,51 @@ html {
     animation: wobble2 var(--uib-speed) infinite ease-in-out;
 }
 
-/* Component-specific styles
-.app-showcase {
-    @apply w-full mt-20 px-5 md:px-20 py-10 md:py-20 flex items-center justify-center;
+/* Container styles */
+.container-style {
+    @apply absolute z-[1] w-full;
   }
   
-  .showcaselayout {
-    @apply flex xl:flex-row flex-col gap-10 justify-between;
+  /* Titles section */
+  .titles-style {
+    @apply w-full border-t border-[rgba(183,171,152,0.25)];
   }
   
-  .first-project-wrapper {
-    @apply h-full flex flex-col justify-between xl:w-[60%];
+  .title-style {
+    @apply border-b border-[rgba(183,171,152,0.25)] cursor-default relative z-[2];
   }
   
-  .first-project-wrapper .image-wrapper {
-    @apply xl:h-[70vh] md:h-[50vh] h-96 relative;
+  .title-wrapper {
+    @apply inline-block pl-[10%];
   }
   
-  .first-project-wrapper .image-wrapper img {
-    @apply w-full h-full object-cover rounded-xl absolute inset-0;
+  .title-text {
+    @apply inline-block text-[#b7ab98] uppercase font-bold text-[8vw] leading-[7.5vw] m-0 relative z-[2];
   }
   
-  .first-project-wrapper .text-content {
-    @apply space-y-5 mt-5;
+  .title-text-shadow {
+    @apply block absolute text-[#1c1c1c] top-0 z-[1];
   }
   
-  .first-project-wrapper .text-content h2 {
-    @apply text-2xl md:text-3xl lg:text-4xl font-bold;
+  /* Descriptions section */
+  .descriptions-style {
+    @apply absolute top-[3px] h-full w-full z-[2] pointer-events-none;
   }
   
-  .first-project-wrapper .text-content p {
-    @apply text-white-50 md:text-xl;
+  .description-style {
+    @apply bg-[#ec4e39] flex justify-between items-center pl-[10%] pr-[10%];
+    clip-path: inset(50% 0 50%);
+    transition: clip-path 0.4s;
   }
   
-  .project-list-wrapper {
-    @apply flex md:flex-row flex-col xl:flex-col gap-10 xl:w-[40%];
+  .description-text-primary {
+    @apply text-[#010101] uppercase font-bold text-[8vw] leading-[7.5vw] m-0 relative z-[1];
   }
   
-  .project-list-wrapper .image-wrapper {
-    @apply xl:h-[37vh] md:h-52 lg:h-72 h-64 relative rounded-xl xl:px-5 2xl:px-12 py-0;
+  .description-text-secondary {
+    @apply w-[40%] text-[1vw] font-bold;
   }
   
-  .project-list-wrapper .image-wrapper.bg-\[\#FFEFDB\] {
-    background-color: #FFEFDB;
-  }
-  
-  .project-list-wrapper .image-wrapper.bg-\[\#FFE7EB\] {
-    background-color: #FFE7EB;
-  }
-  
-  .project-list-wrapper img {
-    @apply w-full h-full object-contain rounded-xl;
-  }
-  
-  .project-list-wrapper h2 {
-    @apply text-lg md:text-xl lg:text-2xl font-semibold mt-5;
-  }
-  
-  /* Utility classes */
-  /* .text-white-50 {
-    color: #d9ecff;
-  } */ 
 
 @keyframes spin78236 {
     0% {
