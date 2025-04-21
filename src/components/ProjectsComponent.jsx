@@ -8,32 +8,32 @@ const ProjectsComponent = () => {
   
   const data = [
     {
-      title: "Ford",
+      title: "Frontend Wizard",
       description: "Working on the Next-Generation HMI Experience without no driving experience.",
       speed: 0.5
     },
     {
-      title: "UFC",
+      title: "Visual Storyteller",
       description: "Developed the Future of UFC Sports Ecosystem despite not being a sports fan.",
       speed: 0.5
     },
     {
-      title: "Lincoln",
+      title: "React ft. python",
       description: "Defined the visual concept and design language for the Lincoln Zephyr 2022 but never seen it in real life.",
       speed: 0.67
     },
     {
-      title: "Royal Caribbean",
+      title: "Lead by Design",
       description: "I was just one person on a massive team that created an entire Royal Caribbean eco-system.",
       speed: 0.8
     },
     {
-      title: "Sleepiq",
+      title: "AI & I’ll solve It",
       description: "Designed a 1M+ users product utilizing my best personal experience: sleeping.",
       speed: 0.8
     },
     {
-      title: "NFL",
+      title: "Pixel-Perfect",
       description: "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
       speed: 0.8
     }
@@ -63,12 +63,12 @@ const ProjectsComponent = () => {
           onMouseLeave={() => setSelectedProject(null)}
         >
           <motion.p 
-            className="inline-block text-yellow-300 uppercase font-bold text-[8vw] leading-[7.5vw] m-0 relative z-[2]"
+            className="inline-block text-yellow-300 uppercase font-bold text-[8vw] leading-[8vw] m-0 relative z-[2]"
             style={{ clipPath: clip }}
           >
             {title}
           </motion.p>
-          <p className="block absolute text-[#1c1c1c] top-0 z-[1] uppercase font-bold text-[8vw] leading-[7.5vw]">
+          <p className="block absolute text-[#1c1c1c] top-0 z-[1] uppercase font-bold text-[8vw] leading-[8vw]">
             {title}
           </p>
         </div>
@@ -90,7 +90,7 @@ const ProjectsComponent = () => {
                 transition: 'clip-path 0.4s'
               }}
             >
-              <p className="text-[#010101] uppercase font-bold text-[8vw] leading-[7.5vw] m-0 relative z-[1]">
+              <p className="text-[#010101] uppercase font-bold text-[8vw] leading-[8vw] m-0 relative z-[1]">
                 {crop(title, 9)}
               </p>
               <p className="w-[40%] text-[1vw] font-bold">
