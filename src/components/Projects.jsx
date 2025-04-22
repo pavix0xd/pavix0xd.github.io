@@ -166,7 +166,7 @@ const Projects = () => (
             src="img/plane.jpg"  // Changed from video to image
             title={
               <>
-                Plane Seat Booking
+                Flight booking System
               </>
             }
             description="An terminal - based Plane seat management system built using pure Java"

@@ -5,6 +5,7 @@ import Navbar from './components/Navbar.jsx';
 import Projects from './components/Projects.jsx';
 import Footer from './components/Footer.jsx';
 import ProjectsComponent from './components/ProjectsComponent.jsx';
+import Contact from './components/Contact.jsx';
 
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
             <About/>
             <Projects/>
             <ProjectsComponent/>
+            <Contact/>
             <Footer/>
         </main>
     );

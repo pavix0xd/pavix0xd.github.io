@@ -162,6 +162,105 @@ body {
         @apply text-3xl lg:text-4xl lg:leading-tight font-robert-regular;
     }
 
+    /* Custom utilities used in the Contact component */
+.max-container {
+  max-width: 5xl;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 3rem;
+  padding-top: 126px;
+  min-height: calc(100vh - 80px);
+  background-color: #000; /* Black background */
+}
+
+.head-text {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  color: #fdff65
+
+  ; /* yellow-300 */
+}
+
+.input {
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  border: 1px solid #fdff65; /* yellow-300 border */
+  color: #fdff65;
+
+  ; /* yellow-300 text */
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(252, 211, 77, 0.1), 0 1px 2px -1px rgba(252, 211, 77, 0.1); /* yellow-300 shadow */
+  width: 100%;
+  padding: 0.625rem;
+  margin-top: 0.625rem;
+  font-weight: 400;
+  transition: all 0.3s ease;
+}
+
+.input::placeholder {
+  color: rgba(253,255,101,255); /* yellow-300 placeholder with opacity */
+}
+
+.input:focus {
+  outline: none;
+  border-color: #fdff65; /* yellow-400 for focus state */
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.2); /* Focus ring */
+}
+
+.textarea {
+  display: block;
+  padding: 0.625rem;
+  width: 100%;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #fdff65; /* yellow-300 */
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+  border-radius: 0.5rem;
+  border: 1px solid #fdff65; /* yellow-300 */
+  margin-top: 0.625rem;
+  font-weight: 400;
+  box-shadow: 0 1px 3px 0 rgba(252, 211, 77, 0.1), 0 1px 2px -1px rgba(252, 211, 77, 0.1);
+  transition: all 0.3s ease;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: #fdff65; /* yellow-400 */
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.2);
+}
+
+.btn {
+  color: #000; /* Black text */
+  background-image: linear-gradient(to right, #fdff65, #fdff65); /* yellow-300 to yellow-400 */
+  font-weight: 600;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  width: 100%;
+  padding: 0.625rem 1.25rem;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btn:hover {
+  background-image: linear-gradient(to right, #fdff65, #fdff65); /* yellow-400 to yellow-500 */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(251, 191, 36, 0.3), 0 2px 4px -1px rgba(251, 191, 36, 0.2);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px 0 rgba(251, 191, 36, 0.2);
+}
 }
 
 
