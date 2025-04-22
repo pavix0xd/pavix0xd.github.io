@@ -23,25 +23,25 @@ const Hero = () => {
             index: 1,
             heading: "FRONTEND DEVELOPER",
             subheading: "MinindU",
-            description: "Visual magics on your way!!"
+            description: <i>"Visual magics on your way!"</i>
         },
         {
             index: 2,
             heading: "GAMER",
             subheading: "MinindU",
-            description: "Visual magics on your way!!"
+            description: <i>"Visual magics on your way!"</i>
         },
         {
             index: 3,
             heading: "EXPLORER",
             subheading: "MinindU",
-            description: "Visual magics on your way!!"
+            description: <i>"Visual magics on your way!"</i>
         },
         {
             index: 4,
             heading: "BROTHER",
             subheading: "MinindU",
-            description: "Visual magics on your way!!"
+            description: <i>"Visual magics on your way!"</i>
         }
     ];
 

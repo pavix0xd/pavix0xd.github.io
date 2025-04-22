@@ -1,12 +1,66 @@
-# React + Vite
+# Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a modern, responsive portfolio website built using **React**, **Vite**, and **Tailwind CSS**. The project showcases your skills, projects, and contact information in an interactive and visually appealing way.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Available Scripts](#available-scripts)
+- [Components Overview](#components-overview)
+- [License](#license)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+- **Responsive Design**: Fully responsive and optimized for all screen sizes.
+- **Interactive Animations**: Smooth animations using `framer-motion` and `GSAP`.
+- **Preloader**: A custom preloader with dynamic text animations.
+- **Dynamic Mouse Tracker**: A custom cursor that follows the mouse position.
+- **Projects Showcase**: A section to display your projects with descriptions and links.
+- **Contact Form**: A functional contact form for visitors to reach out.
+- **Dark Mode Support**: (Optional) Easily extendable for dark mode.
+
+---
+
+## Technologies Used
+
+- **React**: Frontend library for building user interfaces.
+- **Vite**: Fast development environment and build tool.
+- **Tailwind CSS**: Utility-first CSS framework for styling.
+- **Framer Motion**: Library for animations and transitions.
+- **GSAP**: Animation library for scroll-based and advanced animations.
+- **PostCSS**: CSS processing tool for advanced styling.
+- **React Icons**: Icon library for modern UI design.
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+- **Node.js**: Ensure you have Node.js installed (v16 or higher recommended).
+- **npm** or **yarn**: Package manager for installing dependencies.
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/pavix0xd/portfolio.git
+   cd portfolio
+   ```
+2. Install dependencies:
+    ```bash
+    npm install
+    # or
+    yarn install
+    ```
+3. Start dev server:
+    ```bash
+    npm run dev
+    # or
+    yarn dev
+    ```

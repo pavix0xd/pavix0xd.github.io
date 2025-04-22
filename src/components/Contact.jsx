@@ -147,6 +147,10 @@ const Contact = () => {
           {alert.text}
         </div>
       )}
+        <div className="w-full text-center my-20 "><h2 className="text-5xl center font-zentry font-bold bg-clip-text text-black tracking-wide leading-snug animate-fadeInUp">
+          let’s build something different together
+        </h2></div>
+
     </section>
   );
 };

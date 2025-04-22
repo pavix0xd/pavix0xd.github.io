@@ -21,7 +21,7 @@ const Footer = () => {
               href={link.href}
               target="#hero"
               rel="noopener noreferrer"
-              className="text-black transition-colors duration-500 ease-in-out hover:text-white"
+              className="text-black transition-colors duration-500 ease-in-out hover:text-violet-300"
             >
               {link.icon}
             </a>

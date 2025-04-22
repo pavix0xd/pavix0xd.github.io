@@ -9,32 +9,32 @@ const ProjectsComponent = () => {
   const data = [
     {
       title: "Frontend Wizard",
-      description: "Working on the Next-Generation HMI Experience without no driving experience.",
+      description: "Casting clean code spells with React and a sprinkle of CSS magic. I bring ideas to life through smooth animations, fast load times, and pixel-precise layouts.",
       speed: 0.5
     },
     {
       title: "Visual Storyteller",
-      description: "Developed the Future of UFC Sports Ecosystem despite not being a sports fan.",
+      description: "Every interface tells a story. I design and build UIs that guide users naturally, blending form and function to turn wireframes into delightful experiences.",
       speed: 0.5
     },
     {
       title: "React ft. python",
-      description: "Defined the visual concept and design language for the Lincoln Zephyr 2022 but never seen it in real life.",
+      description: "I like keeping things simple and powerful — React for crafting dynamic frontends, Python for clean, reliable backends. Best of both worlds, speaking fluently in both.",
       speed: 0.67
     },
     {
       title: "Lead by Design",
-      description: "I was just one person on a massive team that created an entire Royal Caribbean eco-system.",
+      description: "Good design leads to great products. I work closely with designers and teams to build accessible, scalable, and maintainable frontend systems that look good and work even better.",
       speed: 0.8
     },
     {
       title: "AI & I’ll solve It",
-      description: "Designed a 1M+ users product utilizing my best personal experience: sleeping.",
+      description: "Worked on AI-driven platforms where I focused on making the complex feel simple. Because even the smartest techie needs a friendly companion :3",
       speed: 0.8
     },
     {
       title: "Pixel-Perfect",
-      description: "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
+      description: "I believe every detail matters. From margins to motion, I obsess over UI polish to ensure a consistent, responsive, and beautiful user experience across devices.",
       speed: 0.8
     }
   ];

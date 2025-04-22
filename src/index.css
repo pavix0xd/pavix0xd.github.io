@@ -11,6 +11,48 @@ body {
     font-family: "General Sans", sans-serif;
 }
 
+/* Introduction Component Styles */
+.introduction {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 99;
+    background-color: #141516;
+}
+
+.introduction svg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: calc(100% + 300px);
+}
+
+.introduction svg path {
+    fill: #141516;
+}
+
+.introduction p {
+    display: flex;
+    color: white;
+    font-size: 42px;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+}
+
+.introduction p span {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Rest of your existing styles */
 @layer base {
     @font-face {
         font-family: "circular-web";
@@ -163,111 +205,105 @@ body {
     }
 
     /* Custom utilities used in the Contact component */
-.max-container {
-  max-width: 5xl;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  padding-bottom: 3rem;
-  padding-top: 126px;
-  min-height: calc(100vh - 80px);
-  background-color: #000; /* Black background */
+    .max-container {
+        max-width: 5xl;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-bottom: 3rem;
+        padding-top: 126px;
+        min-height: calc(100vh - 80px);
+        background-color: #000; /* Black background */
+    }
+
+    .head-text {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+        font-weight: 600;
+        font-family: "Poppins", sans-serif;
+        color: #fdff65; /* yellow-300 */
+    }
+
+    .input {
+        background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+        border: 1px solid #fdff65; /* yellow-300 border */
+        color: #fdff65; /* yellow-300 text */
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 1px 3px 0 rgba(252, 211, 77, 0.1), 0 1px 2px -1px rgba(252, 211, 77, 0.1); /* yellow-300 shadow */
+        width: 100%;
+        padding: 0.625rem;
+        margin-top: 0.625rem;
+        font-weight: 400;
+        transition: all 0.3s ease;
+    }
+
+    .input::placeholder {
+        color: rgba(253,255,101,255); /* yellow-300 placeholder with opacity */
+    }
+
+    .input:focus {
+        outline: none;
+        border-color: #fdff65; /* yellow-400 for focus state */
+        box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.2); /* Focus ring */
+    }
+
+    .textarea {
+        display: block;
+        padding: 0.625rem;
+        width: 100%;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        color: #fdff65; /* yellow-300 */
+        background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+        border-radius: 0.5rem;
+        border: 1px solid #fdff65; /* yellow-300 */
+        margin-top: 0.625rem;
+        font-weight: 400;
+        box-shadow: 0 1px 3px 0 rgba(252, 211, 77, 0.1), 0 1px 2px -1px rgba(252, 211, 77, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .textarea:focus {
+        outline: none;
+        border-color: #fdff65; /* yellow-400 */
+        box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.2);
+    }
+
+    .btn {
+        color: #000; /* Black text */
+        background-image: linear-gradient(to right, #fdff65, #fdff65); /* yellow-300 to yellow-400 */
+        font-weight: 600;
+        border-radius: 0.5rem;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        width: 100%;
+        padding: 0.625rem 1.25rem;
+        text-align: center;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .btn:hover {
+        background-image: linear-gradient(to right, #fdff65, #fdff65); /* yellow-400 to yellow-500 */
+        transform: translateY(-1px);
+        box-shadow: 0 4px 6px -1px rgba(251, 191, 36, 0.3), 0 2px 4px -1px rgba(251, 191, 36, 0.2);
+    }
+
+    .btn:active {
+        transform: translateY(0);
+        box-shadow: 0 1px 3px 0 rgba(251, 191, 36, 0.2);
+    }
 }
-
-.head-text {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
-  color: #fdff65
-
-  ; /* yellow-300 */
-}
-
-.input {
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
-  border: 1px solid #fdff65; /* yellow-300 border */
-  color: #fdff65;
-
-  ; /* yellow-300 text */
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 1px 3px 0 rgba(252, 211, 77, 0.1), 0 1px 2px -1px rgba(252, 211, 77, 0.1); /* yellow-300 shadow */
-  width: 100%;
-  padding: 0.625rem;
-  margin-top: 0.625rem;
-  font-weight: 400;
-  transition: all 0.3s ease;
-}
-
-.input::placeholder {
-  color: rgba(253,255,101,255); /* yellow-300 placeholder with opacity */
-}
-
-.input:focus {
-  outline: none;
-  border-color: #fdff65; /* yellow-400 for focus state */
-  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.2); /* Focus ring */
-}
-
-.textarea {
-  display: block;
-  padding: 0.625rem;
-  width: 100%;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  color: #fdff65; /* yellow-300 */
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
-  border-radius: 0.5rem;
-  border: 1px solid #fdff65; /* yellow-300 */
-  margin-top: 0.625rem;
-  font-weight: 400;
-  box-shadow: 0 1px 3px 0 rgba(252, 211, 77, 0.1), 0 1px 2px -1px rgba(252, 211, 77, 0.1);
-  transition: all 0.3s ease;
-}
-
-.textarea:focus {
-  outline: none;
-  border-color: #fdff65; /* yellow-400 */
-  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.2);
-}
-
-.btn {
-  color: #000; /* Black text */
-  background-image: linear-gradient(to right, #fdff65, #fdff65); /* yellow-300 to yellow-400 */
-  font-weight: 600;
-  border-radius: 0.5rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  width: 100%;
-  padding: 0.625rem 1.25rem;
-  text-align: center;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.btn:hover {
-  background-image: linear-gradient(to right, #fdff65, #fdff65); /* yellow-400 to yellow-500 */
-  transform: translateY(-1px);
-  box-shadow: 0 4px 6px -1px rgba(251, 191, 36, 0.3), 0 2px 4px -1px rgba(251, 191, 36, 0.2);
-}
-
-.btn:active {
-  transform: translateY(0);
-  box-shadow: 0 1px 3px 0 rgba(251, 191, 36, 0.2);
-}
-}
-
 
 html {
     scroll-behavior: smooth;
-  }
-  
+}
 
 .indicator-line {
     @apply h-1 w-px rounded-full bg-yellow-300 transition-all duration-200 ease-in-out;
@@ -277,7 +313,6 @@ html {
     animation: indicator-line 0.5s ease infinite;
     animation-delay: calc(var(--animation-order) * 0.1s);
 }
-
 
 @keyframes indicator-line {
     0% {
@@ -299,7 +334,6 @@ html {
     mask-repeat: no-repeat;
     mask-size: 100% 100%;
 }
-  
 
 /* From Uiverse.io by G4b413l */
 /* https://uiverse.io/G4b413l/tidy-walrus-92 */
@@ -373,48 +407,47 @@ html {
 /* Container styles */
 .container-style {
     @apply absolute z-[1] w-full;
-  }
-  
-  /* Titles section */
-  .titles-style {
+}
+
+/* Titles section */
+.titles-style {
     @apply w-full border-t border-[rgba(183,171,152,0.25)];
-  }
-  
-  .title-style {
+}
+
+.title-style {
     @apply border-b border-[rgba(183,171,152,0.25)] cursor-default relative z-[2];
-  }
-  
-  .title-wrapper {
+}
+
+.title-wrapper {
     @apply inline-block pl-[10%];
-  }
-  
-  .title-text {
+}
+
+.title-text {
     @apply inline-block text-[#b7ab98] uppercase font-bold text-[8vw] leading-[7.5vw] m-0 relative z-[2];
-  }
-  
-  .title-text-shadow {
+}
+
+.title-text-shadow {
     @apply block absolute text-[#1c1c1c] top-0 z-[1];
-  }
-  
-  /* Descriptions section */
-  .descriptions-style {
+}
+
+/* Descriptions section */
+.descriptions-style {
     @apply absolute top-[3px] h-full w-full z-[2] pointer-events-none;
-  }
-  
-  .description-style {
+}
+
+.description-style {
     @apply bg-[#ec4e39] flex justify-between items-center pl-[10%] pr-[10%];
     clip-path: inset(50% 0 50%);
     transition: clip-path 0.4s;
-  }
-  
-  .description-text-primary {
+}
+
+.description-text-primary {
     @apply text-[#010101] uppercase font-bold text-[8vw] leading-[7.5vw] m-0 relative z-[1];
-  }
-  
-  .description-text-secondary {
+}
+
+.description-text-secondary {
     @apply w-[40%] text-[1vw] font-bold;
-  }
-  
+}
 
 @keyframes spin78236 {
     0% {
@@ -427,7 +460,7 @@ html {
 }
 
 @keyframes wobble1 {
-     0%, 100% {
+    0%, 100% {
         transform: translateY(0%) scale(1);
         opacity: 1;
     }
@@ -447,4 +480,3 @@ html {
         opacity: 0.8;
     }
 }
-

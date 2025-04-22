@@ -78,9 +78,15 @@ const NavBar = () => {
               title="Contact Me"
               rightIcon={<TiLocationArrow />}
               containerClass="bg-yellow-300 md:flex hidden items-center justify-center gap-1"
+              onClick={() => {
+                const section = document.getElementById("contact");
+                if (section) {
+                  section.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
             />
           </div>
-
+          
           {/* Navigation Links and Audio Button */}
           <div className="flex h-full items-center">
             <div className="hidden md:block">
