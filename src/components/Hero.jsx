@@ -184,7 +184,7 @@ const Hero = () => {
                         <div className="absolute bottom-60 left-10">
                         <Button
                             id="resume"
-                            href="https://drive.google.com/file/d/1xGl-rEtIKzMsTfPAW2G1wZGWD2c-cOmw/view?usp=drive_link"
+                            href="https://drive.google.com/drive/folders/16zQk0eQ0cJsWwyBAFY45QRGgQo_3FzfI?usp=drive_link"
                             target="_blank"
                             rel="noopener noreferrer"
                             title="Resume"
