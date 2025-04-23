@@ -5,62 +5,66 @@ import useAlert from "../hooks/useAlert";
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const { alert, showAlert, hideAlert } = useAlert();
+  const { alert, showAlert } = useAlert();
   const [loading, setLoading] = useState(false);
 
   const handleChange = ({ target: { name, value } }) => {
     setForm({ ...form, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Basic validation
+    if (!form.name || !form.email || !form.message) {
+      showAlert({
+        show: true,
+        text: "Please fill all fields",
+        type: "danger",
+      });
+      return;
+    }
+
     setLoading(true);
 
-    const templateParams = {
-      from_name: form.name,
-      to_name: "Minindu",
-      from_email: form.email,
-      to_email: "minindupavith20@gmail.com",
-      message: form.message,
-    };
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: form.name,
+          to_name: "Minindu",
+          from_email: form.email,
+          to_email: "minindupavith20@gmail.com",
+          message: form.message,
+        },
+        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+      );
 
-    console.log("Sending with params:", templateParams);
+      showAlert({
+        show: true,
+        text: "Message sent successfully! 🎉",
+        type: "success",
+      });
 
-    emailjs.send(
-      import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-      templateParams,
-      import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-    )
-    .then(
-      () => {
-        setLoading(false);
-        showAlert({
-          show: true,
-          text: "Thank you for your message! I'll get to you as soon as possible. 😃 ",
-          type: "success",
-        });
-
-        setTimeout(() => {
-          hideAlert();
-          setForm({ name: "", email: "", message: "" });
-        }, 3000);
-      },
-      (error) => {
-        setLoading(false);
-        console.error("EmailJS Error:", {
-          status: error.status,
-          text: error.text,
-          details: error
-        });
-        showAlert({
-          show: true,
-          text: `Failed to send: ${error.text || "Please try again later"}`,
-          type: "danger",
-        });
-      }
-    );
+      setForm({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error("EmailJS Error:", {
+        status: error.status,
+        text: error.text,
+        fullError: error,
+      });
+      
+      showAlert({
+        show: true,
+        text: `Failed to send: ${error.text || "Server error"}`,
+        type: "danger",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
+
 
   return (
     <section id="contact" className="relative w-full min-h-screen bg-violet-50 py-16">
