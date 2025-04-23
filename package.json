@@ -3,11 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://pavix0xd.github.io/portfolio/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -19,6 +22,7 @@
     "bootstrap": "^5.3.5",
     "clsx": "^2.1.1",
     "framer-motion": "^12.7.4",
+    "github-pages": "^0.1.0",
     "gsap": "^3.12.7",
     "lenis": "^1.2.3",
     "motion": "^12.7.4",
