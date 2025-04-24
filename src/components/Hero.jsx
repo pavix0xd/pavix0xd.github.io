@@ -154,7 +154,7 @@ const Hero = () => {
                         <p className="mb-5 max-w-64 font-robert-regular text-blue-100 whitespace-pre-line">
                             {currentImageData.description}
                         </p>
-                        <div className="absolute bottom-60 left-10">
+                        <div className="absolute bottom-30 left-10">
                             <Button
                                 id="resume"
                                 href="https://drive.google.com/drive/folders/16zQk0eQ0cJsWwyBAFY45QRGgQo_3FzfI?usp=drive_link"
