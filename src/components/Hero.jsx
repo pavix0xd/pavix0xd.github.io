@@ -157,10 +157,10 @@ const Hero = () => {
 <br/>
 <h1 className="text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] 2xl:text-[12rem] font-circular-web font-bold text-white tracking-tight leading-[0.8]">
               {currentImageData.subheading}
-              <span className="text-yellow-300">.</span>
+              <span className="text-yellow-300">     .</span>
             </h1>
 
-            <div className="absolute bottom-30 left-10">
+            <div className="absolute bottom-8 left-10">
               <Button
                 id="resume"
                 href="https://drive.google.com/drive/folders/16zQk0eQ0cJsWwyBAFY45QRGgQo_3FzfI?usp=drive_link"
