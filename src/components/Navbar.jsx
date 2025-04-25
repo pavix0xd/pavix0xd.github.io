@@ -184,61 +184,64 @@ const NavBar = () => {
         </header>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Now styled like the navbar */}
       <div
-        ref={mobileMenuRef}
-        className={clsx(
-          "fixed inset-x-0 top-16 z-40 bg-black/90 backdrop-blur-md transition-all duration-300 md:hidden",
-          {
-            "pointer-events-none invisible opacity-0": !isMobileMenuOpen,
-          }
-        )}
-        style={{ transform: "translateY(-20px)" }}
+  ref={mobileMenuRef}
+  className={clsx(
+    "fixed inset-x-0 top-16 z-40 transition-all duration-300 md:hidden bg-black/80 backdrop-blur-sm",
+    {
+      "pointer-events-none invisible opacity-0": !isMobileMenuOpen,
+    }
+  )}
+  style={{ transform: "translateY(-20px)" }}
+>
+  <div className="flex flex-col items-center space-y-0 p-4">
+    {navItems.map((item, index) => (
+      <a
+        key={index}
+        href={`#${item.toLowerCase()}`}
+        className="nav-hover-btn w-full py-3 px-4 text-center text-white"
+        onClick={handleNavItemClick}
       >
-        <div className="flex flex-col items-center space-y-4 p-6">
-          {navItems.map((item, index) => (
-            <a
-              key={index}
-              href={`#${item.toLowerCase()}`}
-              className="w-full py-3 text-center text-lg text-white hover:text-yellow-300"
-              onClick={handleNavItemClick}
-            >
-              {item}
-            </a>
-          ))}
-          <Button
-            id="mobile-contact-me"
-            title="Contact Me"
-            rightIcon={<TiLocationArrow />}
-            containerClass="bg-yellow-300 flex items-center justify-center gap-1 mt-2 w-full"
-            onClick={() => {
-              const section = document.getElementById("contact");
-              if (section) {
-                section.scrollIntoView({ behavior: "smooth" });
-              }
-              handleNavItemClick();
+        {item}
+      </a>
+    ))}
+    <div className="w-full px-4 py-3">
+      <Button
+        id="mobile-contact-me"
+        title="Contact Me"
+        rightIcon={<TiLocationArrow />}
+        containerClass="bg-yellow-300 flex items-center justify-center gap-1 w-full"
+        onClick={() => {
+          const section = document.getElementById("contact");
+          if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+          }
+          handleNavItemClick();
+        }}
+      />
+    </div>
+    <div className="flex items-center justify-center w-full px-4 py-3">
+      <button
+        onClick={toggleAudioIndicator}
+        className="flex items-center space-x-0.5"
+      >
+        {[1, 2, 3, 4].map((bar) => (
+          <div
+            key={bar}
+            className={clsx("indicator-line", {
+              active: isIndicatorActive,
+            })}
+            style={{
+              animationDelay: `${bar * 0.1}s`,
             }}
           />
-          <div className="flex items-center justify-center pt-4">
-            <button
-              onClick={toggleAudioIndicator}
-              className="flex items-center space-x-0.5"
-            >
-              {[1, 2, 3, 4].map((bar) => (
-                <div
-                  key={bar}
-                  className={clsx("indicator-line", {
-                    active: isIndicatorActive,
-                  })}
-                  style={{
-                    animationDelay: `${bar * 0.1}s`,
-                  }}
-                />
-              ))}
-            </button>
-          </div>
-        </div>
-      </div>
+        ))}
+      </button>
+    </div>
+  </div>
+</div>
+
     </>
   );
 };
