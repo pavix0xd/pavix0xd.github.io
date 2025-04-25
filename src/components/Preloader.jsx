@@ -86,7 +86,7 @@ function SplashScreen({ onComplete }) {
               }}
             >
               <h1 style={{ 
-                color: 'white', 
+                color: 'yellow', 
                 fontSize: '4rem', 
                 fontWeight: 'bold',
                 margin: 0,
