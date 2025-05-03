@@ -103,7 +103,7 @@ const NavBar = () => {
       <div
         ref={navContainerRef}
         className={clsx(
-          "fixed inset-x-0 top-0 z-50 h-16 transition-all duration-700 sm:inset-x-6",
+          "fixed inset-x-0 top-0 z-50 h-16 transition-all duration-700 sm:inset-x-6 border border-transparent",
           {
             "bg-black/80 backdrop-blur-sm": isScrolled,
           }
