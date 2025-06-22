@@ -4,30 +4,35 @@ import { motion, AnimatePresence } from 'framer-motion';
 /* eslint-enable no-unused-vars */
 import useMousePosition from "../hooks/useMousePosition";
 
-export default function AboutText() {
-  const [isHovered, setIsHovered] = useState(false);
-  const { x, y } = useMousePosition();
 
-  // Dynamically size mask relative to viewport width
+export default function AboutText() {
+  const [isHovered, setIsHovered] = useState(false); // To control hover state
+  const { x, y } = useMousePosition(); // Custom hook returns mouse x/y
+
+  // changes the mask size depending on whether user is hovering or not
   const size = isHovered ? window.innerWidth * 0.3 : 40;
 
   return (
     <main className="relative min-h-[80vh] w-full overflow-hidden px-4 flex flex-col justify-center items-center">
 
-      {/* Masked hover effect */}
+      {/* masked hover animation. Uses a .svg mask that follows the mouse */}
       <motion.div
         className="absolute inset-0 flex items-center justify-center bg-[yellow] text-black
           [mask-image:url('/mask.svg')] [mask-repeat:no-repeat] [mask-size:40px] [mask-position:center]
           [-webkit-mask-image:url('/mask.svg')] [-webkit-mask-repeat:no-repeat] [-webkit-mask-size:40px] [-webkit-mask-position:center]
           pointer-events-none z-20"
+        
+        // Animate the mask's position and size as the user moves the mouse
         animate={{
           WebkitMaskPosition: `${x - size / 2}px ${y - size / 2}px`,
           WebkitMaskSize: `${size}px`,
-          opacity: isHovered ? 1 : 0,
+          opacity: isHovered ? 1 : 0, // Only visible during hover
         }}
         transition={{ type: "tween", ease: "backOut", duration: 0.5 }}
       >
+
         <AnimatePresence>
+          {/* text when hovered */}
           {isHovered && (
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -44,16 +49,16 @@ export default function AboutText() {
         </AnimatePresence>
       </motion.div>
 
-      {/* Static body text */}
+      {/* always-visible main text */}
       <motion.div 
         className="relative z-10 flex items-center justify-center w-full"
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 30 }} // Fade-in on load
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
       >
         <p 
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
+          onMouseEnter={() => setIsHovered(true)} // Show hidden layer
+          onMouseLeave={() => setIsHovered(false)} // Hide it again
           className="max-w-[1000px] p-4 text-center text-[clamp(1.5rem,4vw,4rem)] leading-tight text-black cursor-default"
         >
           I'm a <span className="text-[yellow]">selectively skilled</span> Frontend developer and a UI/UX designer with strong

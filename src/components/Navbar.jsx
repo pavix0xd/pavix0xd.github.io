@@ -6,42 +6,52 @@ import { TiLocationArrow } from "react-icons/ti";
 import { FiMenu, FiX } from "react-icons/fi";
 import Button from "./Button";
 
+// Navigation items for the navbar
 const navItems = ["About", "Projects", "Why me?"];
 
 const NavBar = () => {
-  // State for toggling audio and visual indicator
+  // State for toggling audio playback and visual indicator bars
   const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const [isIndicatorActive, setIsIndicatorActive] = useState(false);
+
+  // State for tracking if navbar background and blur should be applied
   const [isScrolled, setIsScrolled] = useState(false);
+
+  // State to control mobile menu open/close
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Refs for audio and navigation container
+  // Refs for the audio element, navbar container, and mobile menu container
   const audioElementRef = useRef(null);
   const navContainerRef = useRef(null);
   const mobileMenuRef = useRef(null);
 
+  // Current vertical scroll position of the window
   const { y: currentScrollY } = useWindowScroll();
+
+  // State to control visibility of navbar 
   const [isNavVisible, setIsNavVisible] = useState(true);
+
+  // State to keep track of last scroll position 
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  // Toggle audio and visual indicator
+  // Toggle audio playback and visual indicator bars on button click
   const toggleAudioIndicator = () => {
     const newState = !isAudioPlaying;
     setIsAudioPlaying(newState);
     setIsIndicatorActive(newState);
   };
 
-  // Toggle mobile menu
+  // Toggle the mobile menu open/close state
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  // Close mobile menu when clicking on a nav item
+  // Close mobile menu when a navigation item is clicked (mobile only)
   const handleNavItemClick = () => {
     setIsMobileMenuOpen(false);
   };
 
-  // Manage audio playback
+  // Effect to play or pause the audio element based on isAudioPlaying state
   useEffect(() => {
     if (isAudioPlaying) {
       audioElementRef.current.play().catch(e => console.log("Audio play failed:", e));
@@ -50,25 +60,31 @@ const NavBar = () => {
     }
   }, [isAudioPlaying]);
 
+  // Effect to detect scroll direction and toggle navbar visibility & styles
   useEffect(() => {
     if (currentScrollY === 0) {
+      // At top of page - show navbar and remove floating styles
       setIsNavVisible(true);
       navContainerRef.current?.classList.remove("floating-nav");
       setIsScrolled(false);
     } else if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      // Scrolling down past 100px - hide navbar, add floating styles, close mobile menu
       setIsNavVisible(false);
       navContainerRef.current?.classList.add("floating-nav");
       setIsScrolled(true);
-      setIsMobileMenuOpen(false); // Close mobile menu when scrolling down
+      setIsMobileMenuOpen(false);
     } else if (currentScrollY < lastScrollY) {
+      // Scrolling up - show navbar and keep floating styles
       setIsNavVisible(true);
       navContainerRef.current?.classList.add("floating-nav");
       setIsScrolled(true);
     }
 
+    // Update last scroll position to current
     setLastScrollY(currentScrollY);
   }, [currentScrollY, lastScrollY]);
 
+  // Animate navbar sliding up/down and opacity change using GSAP on isNavVisible change
   useEffect(() => {
     gsap.to(navContainerRef.current, {
       y: isNavVisible ? 0 : -100,
@@ -77,10 +93,11 @@ const NavBar = () => {
     });
   }, [isNavVisible]);
 
-  // Animation for mobile menu
+  // Animate mobile menu open/close with GSAP
   useEffect(() => {
     if (mobileMenuRef.current) {
       if (isMobileMenuOpen) {
+        // Animate menu sliding down and fade in
         gsap.to(mobileMenuRef.current, {
           y: 0,
           opacity: 1,
@@ -88,6 +105,7 @@ const NavBar = () => {
           ease: "power2.out",
         });
       } else {
+        // Animate menu sliding up and fade out
         gsap.to(mobileMenuRef.current, {
           y: -20,
           opacity: 0,
@@ -100,6 +118,7 @@ const NavBar = () => {
 
   return (
     <>
+      {/* Navbar container fixed at top with dynamic background and blur on scroll */}
       <div
         ref={navContainerRef}
         className={clsx(
@@ -109,15 +128,17 @@ const NavBar = () => {
           }
         )}
       >
+        {/* Navbar content vertically centered */}
         <header className="absolute top-1/2 w-full -translate-y-1/2">
           <nav className="flex size-full items-center justify-between px-4 sm:px-6">
-            {/* Logo and Name */}
+            {/* Logo on the left */}
             <div className="flex items-center gap-4">
               <img src="/img/logo.png" alt="logo" className="w-10" />
             </div>
             
-            {/* Desktop Navigation Links and Audio Button */}
+            {/* Desktop navigation links, contact button, and audio toggle */}
             <div className="hidden h-full items-center md:flex">
+              {/* Navigation links for desktop */}
               <div className="hidden md:block">
                 {navItems.map((item, index) => (
                   <a
@@ -129,6 +150,8 @@ const NavBar = () => {
                   </a>
                 ))}
               </div>
+
+              {/* Contact Me button with icon */}
               <div>
                 <Button
                   id="contact-me"
@@ -144,16 +167,19 @@ const NavBar = () => {
                 />
               </div>
 
+              {/* Audio toggle button with visual indicator bars */}
               <button
                 onClick={toggleAudioIndicator}
                 className="ml-6 flex items-center space-x-0.5"
               >
+                {/* Hidden audio element for playback */}
                 <audio
                   ref={audioElementRef}
                   className="hidden"
                   src="/audio/loop.mp3"
                   loop
                 />
+                {/* Indicator bars with staggered animation delays */}
                 {[1, 2, 3, 4].map((bar) => (
                   <div
                     key={bar}
@@ -168,7 +194,7 @@ const NavBar = () => {
               </button>
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile menu toggle button (hamburger / close icon) */}
             <button 
               className="flex items-center justify-center p-2 md:hidden"
               onClick={toggleMobileMenu}
@@ -184,64 +210,69 @@ const NavBar = () => {
         </header>
       </div>
 
-      {/* Mobile Menu - Now styled like the navbar */}
+      {/* Mobile menu dropdown, styled similarly to navbar */}
       <div
-  ref={mobileMenuRef}
-  className={clsx(
-    "fixed inset-x-0 top-16 z-40 transition-all duration-300 md:hidden bg-black/80 backdrop-blur-sm",
-    {
-      "pointer-events-none invisible opacity-0": !isMobileMenuOpen,
-    }
-  )}
-  style={{ transform: "translateY(-20px)" }}
->
-  <div className="flex flex-col items-center space-y-0 p-4">
-    {navItems.map((item, index) => (
-      <a
-        key={index}
-        href={`#${item.toLowerCase()}`}
-        className="nav-hover-btn w-full py-3 px-4 text-center text-white"
-        onClick={handleNavItemClick}
-      >
-        {item}
-      </a>
-    ))}
-    <div className="w-full px-4 py-3">
-      <Button
-        id="mobile-contact-me"
-        title="Contact Me"
-        rightIcon={<TiLocationArrow />}
-        containerClass="bg-yellow-300 flex items-center justify-center gap-1 w-full"
-        onClick={() => {
-          const section = document.getElementById("contact");
-          if (section) {
-            section.scrollIntoView({ behavior: "smooth" });
+        ref={mobileMenuRef}
+        className={clsx(
+          "fixed inset-x-0 top-16 z-40 transition-all duration-300 md:hidden bg-black/80 backdrop-blur-sm",
+          {
+            // Hide and disable pointer events when menu is closed
+            "pointer-events-none invisible opacity-0": !isMobileMenuOpen,
           }
-          handleNavItemClick();
-        }}
-      />
-    </div>
-    <div className="flex items-center justify-center w-full px-4 py-3">
-      <button
-        onClick={toggleAudioIndicator}
-        className="flex items-center space-x-0.5"
+        )}
+        style={{ transform: "translateY(-20px)" }}
       >
-        {[1, 2, 3, 4].map((bar) => (
-          <div
-            key={bar}
-            className={clsx("indicator-line", {
-              active: isIndicatorActive,
-            })}
-            style={{
-              animationDelay: `${bar * 0.1}s`,
-            }}
-          />
-        ))}
-      </button>
-    </div>
-  </div>
-</div>
+        <div className="flex flex-col items-center space-y-0 p-4">
+          {/* Mobile navigation links */}
+          {navItems.map((item, index) => (
+            <a
+              key={index}
+              href={`#${item.toLowerCase()}`}
+              className="nav-hover-btn w-full py-3 px-4 text-center text-white"
+              onClick={handleNavItemClick}
+            >
+              {item}
+            </a>
+          ))}
 
+          {/* Contact Me button for mobile */}
+          <div className="w-full px-4 py-3">
+            <Button
+              id="mobile-contact-me"
+              title="Contact Me"
+              rightIcon={<TiLocationArrow />}
+              containerClass="bg-yellow-300 flex items-center justify-center gap-1 w-full"
+              onClick={() => {
+                const section = document.getElementById("contact");
+                if (section) {
+                  section.scrollIntoView({ behavior: "smooth" });
+                }
+                handleNavItemClick();
+              }}
+            />
+          </div>
+
+          {/* Audio toggle button in mobile menu */}
+          <div className="flex items-center justify-center w-full px-4 py-3">
+            <button
+              onClick={toggleAudioIndicator}
+              className="flex items-center space-x-0.5"
+            >
+              {[1, 2, 3, 4].map((bar) => (
+                <div
+                  key={bar}
+                  className={clsx("indicator-line", {
+                    active: isIndicatorActive,
+                  })}
+                  style={{
+                    animationDelay: `${bar * 0.1}s`,
+                  }}
+                />
+              ))}
+            </button>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

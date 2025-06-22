@@ -9,7 +9,7 @@ function SplashScreen({ onComplete }) {
   const [currentGreetingIndex, setCurrentGreetingIndex] = useState(0)
 
   const greetings = [
-    "ආයුබෝවන්", // Ayubowan in Sinhala (Sri Lanka)
+    "ආයුබෝවන්", 
     "• Hello",
     "• Hola",
     "• Bonjour",
